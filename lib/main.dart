@@ -9,9 +9,12 @@ import 'package:core/presentation/page/mark/mark_page.dart';
 import 'package:core/presentation/page/impact/impact_page.dart';
 import 'package:core/presentation/page/prevention/prevention_page.dart';
 import 'package:core/presentation/page/vitamin/vitam_and_mineral.dart';
-import 'package:core/presentation/page/pantangan/pantangan.dart';
+import 'package:core/presentation/page/pantangan/pantangan_page.dart';
+import 'package:core/presentation/page/whatis_stunting/whatis_stunting.dart';
 import 'package:core/presentation/page/reason/reason_page.dart';
+import 'package:core/presentation/page/healthy/healthy_page.dart';
 import 'package:core/presentation/page/slider/slider_page.dart';
+import 'package:core/presentation/page/panduan_gizi/panduan_gizi.dart';
 import 'package:core/style/colors.dart';
 import 'package:core/utils/routes.dart';
 import 'package:core/utils/utils.dart';
@@ -74,6 +77,12 @@ class MyApp extends StatelessWidget {
             return MaterialPageRoute(builder: (_) => const AnnotatedRegion<SystemUiOverlayStyle>(value: SystemUiOverlayStyle(statusBarColor: colorPrimary),child: VitaminAnMineralPage(),));
           case PANTANGAN_PAGE:
             return MaterialPageRoute(builder: (_) => const AnnotatedRegion<SystemUiOverlayStyle>(value: SystemUiOverlayStyle(statusBarColor: colorPrimary),child: PantanganPage(),));
+          case WHATIS_PAGE  :
+            return MaterialPageRoute(builder: (_) => const AnnotatedRegion<SystemUiOverlayStyle>(value: SystemUiOverlayStyle(statusBarColor: colorPrimary),child: WhatIsStutingPage(),));
+          case HEALTHY_PAGE  :
+            return MaterialPageRoute(builder: (_) => const AnnotatedRegion<SystemUiOverlayStyle>(value: SystemUiOverlayStyle(statusBarColor: colorPrimary),child: HealthyPage(),));
+          case PANDUAN_GIZI  :
+            return MaterialPageRoute(builder: (_) => const AnnotatedRegion<SystemUiOverlayStyle>(value: SystemUiOverlayStyle(statusBarColor: colorPrimary),child: PanduanGiziPage(),));
         }
         return MaterialPageRoute(builder: (_) => const  SliderPage());
       },

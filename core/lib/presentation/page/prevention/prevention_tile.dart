@@ -18,7 +18,7 @@ Widget preventionTile(int number, String message, int length) {
           Expanded(
             flex: 1,
             child: Text(
-              "$number.",
+              "\u25CF",
               style: GoogleFonts.asap(height: 1.5),
             ),
           ),
@@ -34,7 +34,7 @@ Widget preventionTile(int number, String message, int length) {
       if (number == length)
         Text(
           textAlign: TextAlign.justify,
-          'Namun karena kurangnya edukasi mengenai stunting di beberapa kalangan masyarakat Indonesia, kami membuat aplikasi ASIH (Aplikasi Anti Stunting untuk Ibu Hamil Berbasis Android) untuk mencegah stunting khususnya pada masa kehamilan dengan memberikan edukasi mengenai stunting, dengan fitur-fitur seperti pola hidup sehat, dan pola makan yang sehat. Disesuaikan dengan kondisi tubuh ibu hamil dari kalkulator gizi.',
+          'Edukasi mengenai stunting di beberapa kalangan masyarakat Indonesia masih kurang sehingga kami membuat aplikasi ASIH (Aplikasi Anti Stunting untuk Ibu Hamil Berbasis Android) untuk mencegah stunting khususnya pada masa kehamilan dengan memberikan edukasi mengenai stunting, dengan fitur-fitur seperti pola hidup sehat, dan pola makan yang sehat. Disesuaikan dengan kondisi tubuh ibu hamil dari kalkulator gizi.',
           style: GoogleFonts.asap(),
         )
     ],

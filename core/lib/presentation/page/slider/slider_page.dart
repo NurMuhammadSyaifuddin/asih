@@ -1,4 +1,5 @@
 import 'package:core/notifier/page_model.dart';
+import 'package:core/presentation/page/slider/page0.dart';
 import 'package:core/presentation/page/slider/page1.dart';
 import 'package:core/presentation/page/slider/page2.dart';
 import 'package:core/presentation/page/slider/page3.dart';
@@ -55,9 +56,9 @@ class _SliderPageState extends State<SliderPage> {
                         model.setCurrentPage(page);
                       },
                       children: [
+                        page0(context, pageController),
                         page1(context, pageController),
                         page2(context, pageController),
-                        page3(context),
                       ],
                     )),
                   ),

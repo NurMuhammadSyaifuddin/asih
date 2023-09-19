@@ -6,3 +6,6 @@ const MARK_PAGE = "mark_page";
 const IMPACT_PAGE = "impact_page";
 const VITAMIN_PAGE = "vitamin_page";
 const PANTANGAN_PAGE = "pantangan_page";
+const WHATIS_PAGE = "whatis_stunting";
+const HEALTHY_PAGE = "healthy_page";
+const PANDUAN_GIZI = "panduan_gizi";

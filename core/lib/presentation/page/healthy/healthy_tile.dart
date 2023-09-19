@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-Widget impactTile(int number, String message, int length, String type) {
+Widget healthyTile(int number, String message, int length, String type) {
   return Column(
     mainAxisAlignment: MainAxisAlignment.start,
     crossAxisAlignment: CrossAxisAlignment.start,
@@ -10,7 +10,7 @@ Widget impactTile(int number, String message, int length, String type) {
          Column(
            children: [
              Text(
-               'Dampak $type: ',
+               '$type',
                style: GoogleFonts.asap(
                    fontSize: 18,
                    fontWeight: FontWeight.bold

@@ -1,16 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-Widget impactTile(int number, String message, int length, String type) {
+Widget pantanganTile(int number, String message, int length, String type) {
   return Column(
     mainAxisAlignment: MainAxisAlignment.start,
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
-      if (number == 1)
+      if (number == 1 && type.isNotEmpty)
          Column(
            children: [
              Text(
-               'Dampak $type: ',
+               type,
                style: GoogleFonts.asap(
                    fontSize: 18,
                    fontWeight: FontWeight.bold

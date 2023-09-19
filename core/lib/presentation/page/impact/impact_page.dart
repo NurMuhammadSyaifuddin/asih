@@ -15,7 +15,7 @@ class ImpactPage extends StatelessWidget {
       "Terhambatnya kemampuan kognitif →  keterbelakangan mental, rendahnya kemampuan belajar, dan risiko serangan penyakit kronis seperti diabetes, hipertensi, hingga obesitas."
     ];
     final messages2 = [
-      "Berpotensi menimbulkan kerugian setiap tahunnya : 2-3 % GDP. (kemenkes, 2018)"
+      "Balita/Baduta ( Bayi dibawah usia dua tahun ) yang mengalami stunting akan memiliki tingkat kecerdasan tidak maksimal, menjadikan anak lebih rentan terhadap penyakit dan di masa depan dapat beresiko pada menurunnya tingkat produktivitas. Pada akhirnya secara luas stunting akan dapat menghambat pertumbuhan ekonomi, meningkatkan kemiskinan dan memperlebar ketimpangan sehingga berpotensi menimbulkan kerugian setiap tahunnya : 2-3 % (Gross Domestic Product)."
     ];
 
     return SafeArea(

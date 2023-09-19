@@ -1,3 +1,4 @@
+import 'package:core/presentation/page/whatis_stunting/whatis_stunting.dart';
 import 'package:core/style/colors.dart';
 import 'package:core/utils/routes.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -9,78 +10,71 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final auth = FirebaseAuth.instance;
 
     return Scaffold(
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Align(
-                  alignment: Alignment.topRight,
-                  child: auth.currentUser?.photoURL != null
-                      ? ClipRRect(
-                    borderRadius: BorderRadius.circular(12),
-                    child: Image.network(
-                      auth.currentUser!.photoURL.toString(),
-                      fit: BoxFit.cover,
-                      width: 48,
-                      height: 48,
-                    ),
-                  )
-                      : const Icon(Icons.person)),
-              const SizedBox(
-                height: 48,
-              ),
-              Align(
-                alignment: Alignment.topLeft,
-                child: RichText(
-                    text: TextSpan(
-                        style: DefaultTextStyle.of(context).style,
-                        children: [
-                          TextSpan(
-                              text: 'Hello, ',
-                              style: GoogleFonts.quicksand(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 24,
-                                  color: kDavysGrey)),
-                          TextSpan(
-                              text: auth.currentUser?.displayName ??
-                                  auth.currentUser!.email!,
-                              style: GoogleFonts.quicksand(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 18,
-                                  color: kDavysGrey))
-                        ])),
-              ),
-              const SizedBox(
-                height: 8,
-              ),
-              Align(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  'Welcome Back!',
-                  style: GoogleFonts.asap(fontSize: 16, color: kDavysGrey),
+      body: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
+        child: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                const SizedBox(height: 24,),
+                Image.asset(
+                  "assets/logo_asih.png",
+                  width: 100,
+                  height: 100,
                 ),
-              ),
-              const SizedBox(
-                height: 24,
-              ),
-              Expanded(
-                child: GridView.count(
+                const SizedBox(height: 16,),
+                Padding(padding: const EdgeInsets.symmetric(horizontal: 12),
+                  child: Text(
+                    'ASIH',
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.poppins(
+                        fontWeight: FontWeight.bold,
+                        color: kRichBlack,
+                        fontSize: 32),
+                  ),),
+                const SizedBox(
+                  height: 4,
+                ),
+                Padding(padding: const EdgeInsets.symmetric(horizontal: 12),
+                  child: Text(
+                    'Aplikasi Anti Stunting Untuk Ibu Hamil',
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.poppins(
+                        fontWeight: FontWeight.normal,
+                        color: kDavysGrey,
+                        fontSize: 14),
+                  ),),
+                const SizedBox(
+                  height: 32,
+                ),
+                Align(alignment: Alignment.topLeft,
+                  child: Text(
+                    'Yuk Belajar Tentang Stunting',
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.plusJakartaSans(
+                        fontWeight: FontWeight.bold,
+                        color: kDavysGrey,
+                        fontSize: 24),
+                  ),),
+                const SizedBox(height: 16,),
+                GridView.count(
+                  physics: const NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
                   crossAxisCount: 2,
-                  mainAxisSpacing: 16,
-                  crossAxisSpacing: 16,
-                  childAspectRatio: 0.8,
+                  mainAxisSpacing: 12,
+                  crossAxisSpacing: 12,
+                  childAspectRatio: 1,
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(12),
                       // Atur besar radius di sini
                       child: GestureDetector(
                         onTap: () {
-                          Navigator.pushNamed(context, REASON_PAGE);
+                          Navigator.pushNamed(context, WHATIS_PAGE);
                         },
                         child: Container(
                           decoration: const BoxDecoration(
@@ -101,7 +95,7 @@ class HomeScreen extends StatelessWidget {
                                 height: 12,
                               ),
                               Text(
-                                'Penyebab',
+                                'Apa itu stunting',
                                 style: GoogleFonts.adventPro(
                                     fontSize: 20,
                                     color: kDavysGrey,
@@ -157,8 +151,8 @@ class HomeScreen extends StatelessWidget {
                           decoration: const BoxDecoration(
                               gradient: LinearGradient(
                                   colors: [colorPrimary, colorSecondary],
-                                  begin: Alignment.bottomLeft,
-                                  end: Alignment.topRight)),
+                                  begin: Alignment.centerLeft,
+                                  end: Alignment.centerRight)),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -192,8 +186,8 @@ class HomeScreen extends StatelessWidget {
                           decoration: const BoxDecoration(
                               gradient: LinearGradient(
                                   colors: [colorPrimary, colorSecondary],
-                                  begin: Alignment.bottomRight,
-                                  end: Alignment.topLeft)),
+                                  begin: Alignment.centerRight,
+                                  end: Alignment.centerLeft)),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -217,11 +211,151 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    // The rest of the grid items...
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(12),
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, REASON_PAGE);
+                        },
+                        child: Container(
+                          decoration: const BoxDecoration(
+                              gradient: LinearGradient(
+                                  colors: [colorPrimary, colorSecondary],
+                                  begin: Alignment.centerLeft,
+                                  end: Alignment.centerRight)),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const Icon(
+                                Icons.stop_circle_outlined,
+                                color: kDavysGrey,
+                                size: 36,
+                              ),
+                              const SizedBox(
+                                height: 12,
+                              ),
+                              Text(
+                                'Penyebab',
+                                style: GoogleFonts.adventPro(
+                                    fontSize: 20,
+                                    color: kDavysGrey,
+                                    fontWeight: FontWeight.bold),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(12),
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, HEALTHY_PAGE);
+                        },
+                        child: Container(
+                          decoration: const BoxDecoration(
+                              gradient: LinearGradient(
+                                  colors: [colorPrimary, colorSecondary],
+                                  begin: Alignment.centerRight,
+                                  end: Alignment.centerLeft)),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const Icon(
+                                Icons.add_box_outlined,
+                                color: kDavysGrey,
+                                size: 36,
+                              ),
+                              const SizedBox(
+                                height: 12,
+                              ),
+                              Text(
+                                'Sehat Selama Hamil',
+                                style: GoogleFonts.adventPro(
+                                    fontSize: 20,
+                                    color: kDavysGrey,
+                                    fontWeight: FontWeight.bold),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(12),
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, PANDUAN_GIZI);
+                        },
+                        child: Container(
+                          decoration: const BoxDecoration(
+                              gradient: LinearGradient(
+                                  colors: [colorPrimary, colorSecondary],
+                                  begin: Alignment.bottomLeft,
+                                  end: Alignment.topRight)),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const Icon(
+                                Icons.scale_outlined,
+                                color: kDavysGrey,
+                                size: 36,
+                              ),
+                              const SizedBox(
+                                height: 12,
+                              ),
+                              Text(
+                                'Panduan Gizi Seimbang',
+                                textAlign: TextAlign.center,
+                                style: GoogleFonts.adventPro(
+                                    fontSize: 20,
+                                    color: kDavysGrey,
+                                    fontWeight: FontWeight.bold),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(12),
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, MARK_PAGE);
+                        },
+                        child: Container(
+                          decoration: const BoxDecoration(
+                              gradient: LinearGradient(
+                                  colors: [colorPrimary, colorSecondary],
+                                  begin: Alignment.bottomRight,
+                                  end: Alignment.topLeft)),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const Icon(
+                                Icons.menu_book_outlined,
+                                color: kDavysGrey,
+                                size: 36,
+                              ),
+                              const SizedBox(
+                                height: 12,
+                              ),
+                              Text(
+                                'Menuku',
+                                style: GoogleFonts.adventPro(
+                                    fontSize: 20,
+                                    color: kDavysGrey,
+                                    fontWeight: FontWeight.bold),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

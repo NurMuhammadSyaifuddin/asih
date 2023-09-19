@@ -18,7 +18,7 @@ Widget markTile(int number, String message, int length) {
           Expanded(
             flex: 1,
             child: Text(
-              "$number.",
+              "\u25CF",
               style: GoogleFonts.asap(height: 1),
             ),
           ),

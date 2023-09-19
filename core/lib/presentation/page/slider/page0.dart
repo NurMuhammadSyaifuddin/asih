@@ -7,65 +7,65 @@ import '../../../notifier/page_model.dart';
 
 
 
-Widget page1(BuildContext context, PageController pageController) {
+Widget page0(BuildContext context, PageController pageController) {
+
+  const int _currentPage = 0;
 
   return Consumer<PageModel>(
       builder: (context, model, _) =>
           Center(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const SizedBox(
                   height: 32,
                 ),
                 Image.asset(
-                  "assets/logo_doctor_wanita.png",
-                  width: 200,
-                  height: 200,
+                  "assets/logo_asih.png",
+                  width: 150,
+                  height: 150,
                 ),
-                const SizedBox(
-                  height: 32,
-                ),
-                 Text(
-                  'Stunting',
-                  style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                      fontSize: 28),
-                ),
-                const SizedBox(
-                  height: 24,
-                ),
-                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 12),
+                const SizedBox(height: 16,),
+                Padding(padding: const EdgeInsets.symmetric(horizontal: 12),
                   child: Text(
-                    'Stunting adalah kondisi gagal tumbuh pada anak yang disebabkan oleh kekurangan gizi kronis, terutama pada periode 1.000 hari pertama kehidupan sejak konsepsi hingga usia dua tahun. Kondisi ini ditandai dengan pertumbuhan tubuh yang terhambat, yaitu tinggi badan anak yang lebih pendek dari tinggi badan normal yang seharusnya sebanding dengan usianya.',
+                    'ASIH',
                     textAlign: TextAlign.center,
                     style: GoogleFonts.poppins(
-                        color: Colors.white,
                         fontWeight: FontWeight.bold,
-                        fontSize: 12),
-                  ),
+                        color: Colors.white,
+                        fontSize: 36),
+                  ),),
+                const SizedBox(
+                  height: 12,
                 ),
+                Padding(padding: const EdgeInsets.symmetric(horizontal: 12),
+                child: Text(
+                  'Aplikasi Anti Stunting Untuk Ibu Hamil',
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.poppins(
+                      fontWeight: FontWeight.normal,
+                      color: Colors.white,
+                      fontSize: 18),
+                ),),
                 const SizedBox(
                   height: 48,
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    pageController.animateToPage(model.currentPage + 1,
+                    model.setCurrentPage(_currentPage + 1);
+                    pageController.animateToPage(model.currentPage,
                         duration: const Duration(milliseconds: 1000),
                         curve: Curves.ease);
                   },
                   style: ButtonStyle(
                       backgroundColor:
                       MaterialStateProperty.all(Colors.green)),
-                  child: const Row(
+                  child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
                         "Next",
-                        style: TextStyle(
-                            fontFamily: 'Poppins',
+                        style: GoogleFonts.poppins(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
                             fontSize: 16),
